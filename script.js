@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        let response = await fetch('content.json');
+        let response = await fetch('./content.json');
         let data = await response.json();
 
         // Alle IDs aus der JSON in die HTML-Elemente mappen
