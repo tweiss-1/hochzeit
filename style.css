@@ -157,3 +157,21 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
 }
+/* --- HINTERGRUND-VIDEO STILE --- */
+.video-section {
+    position: relative;
+    overflow: hidden; /* Verhindert, dass das Video über den Rand hinaussteht */
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0; /* Liegt ganz unten hinter dem Overlay */
+    object-fit: cover;
+}

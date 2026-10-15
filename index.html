@@ -34,8 +34,25 @@
             </div>
         </section>
 
-        <!-- 2. Location (Mit Hintergrundbild) -->
+        <!-- 2. Location (Mit Hintergrundbild) 
         <section id="location" class="hero-section" style="background-image: url(images/schloss-ottersbach.jpg);">
+            <div class="hero-content">
+                <h2>Die Location</h2>
+                <p style="font-size: 1.4rem; font-weight: bold;" data-content="location_name"></p>
+                <p data-content="location_adresse"></p>
+                <p data-content="location_details" style="margin-top: 1rem; font-style: italic;"></p>
+            </div>
+        </section> -->
+
+        <!-- 2. Location (Mit Hintergrund-Video) -->
+        <section id="location" class="hero-section video-section">
+            <!-- Das Video-Element -->
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="location.mp4" type="video/mp4">
+                Dein Browser unterstützt kein Video.
+            </video>
+
+            <!-- Der Textinhalt (wird dank z-index über das Video gelegt) -->
             <div class="hero-content">
                 <h2>Die Location</h2>
                 <p style="font-size: 1.4rem; font-weight: bold;" data-content="location_name"></p>
