@@ -62,15 +62,18 @@ header.site-header {
 /* --- VOLLBILD-SEKTIONEN MIT HINTERGRUNDBILD --- */
 section.hero-section {
     position: relative;
-    min-height: 75vh;
+    min-height: 75vh; /* Mindesthöhe der Sektion */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #FFFFFF;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
+    /* --- HIER WIRD SKALIERT --- */
+    background-size: cover;          /* Skaliert das Bild bildschirmfüllend */
+    background-position: center;     /* Zentriert das Bild im Ausschnitt */
+    background-repeat: no-repeat;    /* Verhindert das Wiederholen/Kacheln */
+    
     padding: 4rem 2rem;
     border-bottom: 4px solid var(--accent);
 }
