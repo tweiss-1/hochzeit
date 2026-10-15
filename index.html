@@ -61,8 +61,25 @@
             </div>
         </section>
 
-        <!-- 3. Fotos -->
+        <!-- 3. Fotos 
         <section id="fotos" class="hero-section" style="background-image: url('watermarked_img_845686807046819129.jpg');">
+            <div class="hero-content">
+                <h2>Eindrücke & Fotos</h2>
+                <p data-content="fotos_text"></p>
+                <p style="font-weight: bold; margin-top: 1rem;" data-content="fotos_hinweis"></p>
+            </div>
+        </section> -->
+
+        <!-- 3. Fotos (Mit automatischer Diashow) -->
+        <section id="fotos" class="hero-section video-section"> <!-- Behält Overlay-Stil bei -->
+            <!-- NEU: Hier baut das JS die Diashow-Bilder rein -->
+            <div class="diashow-container" id="diashow-wrapper">
+                <!-- Die Bilder werden hier vom JS eingefügt, z.B.:
+                <div class="diashow-slide active" style="background-image: url('images/diashow/bild1.jpg');"></div>
+                <div class="diashow-slide" style="background-image: url('images/diashow/bild2.jpg');"></div>
+                -->
+            </div>
+
             <div class="hero-content">
                 <h2>Eindrücke & Fotos</h2>
                 <p data-content="fotos_text"></p>
