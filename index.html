@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsere Hochzeit</title>
+    <title>Unsere Hochzeit – Kathi & Thomas</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Einbindung der Google Font 'Playfair Display' für edle Überschriften -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Einheitliches Menüband (Header) -->
+    <!-- Menüband -->
     <header class="site-header">
         <div class="header-container">
             <a href="#welcome" class="header-logo" data-content="paar_namen">Laden...</a>
@@ -24,48 +23,57 @@
         </div>
     </header>
 
-    <!-- Hauptinhalt -->
-    <main>
-        <!-- 1. Welcomepage / Startseite -->
-        <section id="welcome" class="hero">
-            <h1 data-content="paar_namen">Laden...</h1>
-            <p class="date" data-content="datum">Laden...</p>
-            <p class="intro-text" data-content="einleitungstext">Laden...</p>
+    <main style="max-width: none; padding: 0;">
+
+        <!-- 1. Welcome / Startseite (Mit Hintergrundbild) -->
+        <section id="welcome" class="hero-section" style="background-image: url('watermarked_img_6513407295372902831.jpg');">
+            <div class="hero-content">
+                <h1 data-content="paar_namen">Laden...</h1>
+                <p class="date" data-content="datum" style="letter-spacing: 3px; text-transform: uppercase; font-size: 1rem; color: #E5DCD5;"></p>
+                <p data-content="einleitungstext" style="font-size: 1.3rem; margin-top: 1.5rem;"></p>
+            </div>
         </section>
 
-        <!-- 2. Location -->
-        <section id="location">
-            <h2>Die Location</h2>
-            <p><strong data-content="location_name" style="font-size: 1.2rem; color: var(--primary);"></strong></p>
-            <p data-content="location_adresse"></p>
-            <p class="section-desc" data-content="location_details"></p>
+        <!-- 2. Location (Mit Hintergrundbild) -->
+        <section id="location" class="hero-section" style="background-image: url(images/schloss-ottersbach.jpg);">
+            <div class="hero-content">
+                <h2>Die Location</h2>
+                <p style="font-size: 1.4rem; font-weight: bold;" data-content="location_name"></p>
+                <p data-content="location_adresse"></p>
+                <p data-content="location_details" style="margin-top: 1rem; font-style: italic;"></p>
+            </div>
         </section>
 
         <!-- 3. Fotos -->
-        <section id="fotos">
-            <h2>Eindrücke & Fotos</h2>
-            <p class="section-desc" data-content="fotos_text">Hier findet ihr nach der Hochzeit alle Erinnerungen und Schnappschüsse.</p>
-            <!-- Platzhalter für Foto-Grid oder Link -->
-            <div class="photo-placeholder" data-content="fotos_hinweis"></div>
+        <section id="fotos" class="hero-section" style="background-image: url('watermarked_img_845686807046819129.jpg');">
+            <div class="hero-content">
+                <h2>Eindrücke & Fotos</h2>
+                <p data-content="fotos_text"></p>
+                <p style="font-weight: bold; margin-top: 1rem;" data-content="fotos_hinweis"></p>
+            </div>
         </section>
 
-        <!-- 4. Kulinarik -->
-        <section id="kulinarik">
-            <h2>Kulinarik</h2>
-            <p class="section-desc" data-content="kulinarik_text">Von regionalen Köstlichkeiten bis zur Mitternachtssause – hier erfahrt ihr alles rund um das leibliche Wohl.</p>
+        <!-- 4. Kulinarik (Mit Hintergrundbild) -->
+        <section id="kulinarik" class="hero-section" style="background-image: url('watermarked_img_845686807046819129.jpg');">
+            <div class="hero-content">
+                <h2>Kulinarik</h2>
+                <p data-content="kulinarik_text" style="font-size: 1.2rem;"></p>
+            </div>
         </section>
 
-        <!-- 5. Infos & FAQ -->
-        <section id="infos">
-            <h2>Wichtige Infos</h2>
+        <!-- 5. Infos & FAQ (Als klassische, saubere Box auf hellem Hintergrund) -->
+        <section id="infos" class="info-section">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2>Wichtige Infos</h2>
+            </div>
             <div class="info-grid">
                 <div class="info-item">
                     <h3>Dresscode</h3>
-                    <p data-content="info_dresscode">Laden...</p>
+                    <p data-content="info_dresscode"></p>
                 </div>
                 <div class="info-item">
                     <h3>Geschenke</h3>
-                    <p data-content="info_geschenke">Laden...</p>
+                    <p data-content="info_geschenke"></p>
                 </div>
                 <div class="info-item">
                     <h3>Rückmeldung (RSVP)</h3>
@@ -73,9 +81,10 @@
                 </div>
             </div>
         </section>
+
     </main>
 
-    <!-- Einheitlicher Footer -->
+    <!-- Footer -->
     <footer class="site-footer">
         <p>&copy; 2026 – <span data-content="paar_namen"></span> | Wir freuen uns auf euch!</p>
     </footer>
