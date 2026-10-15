@@ -1,32 +1,66 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        // Wir versuchen die JSON-Datei zu laden
         let response = await fetch('./content.json');
-
-        // Prüfen, ob die Datei überhaupt existiert (Fehler wie 404 abfangen)
-        if (!response.ok) {
-            throw new Error(`Datei nicht gefunden (HTTP-Status: ${response.status})`);
-        }
-
+        if (!response.ok) throw new Error("Fehler beim Laden der JSON");
         let data = await response.json();
 
-        // Alle Elemente mit data-content Attribut befüllen
+        // 1. Alle einfachen Textelemente befüllen (wie bisher)
         for (let key in data) {
             let elements = document.querySelectorAll(`[data-content="${key}"]`);
             elements.forEach(element => {
                 element.innerText = data[key];
             });
         }
+
+        // 2. DIASHOW STARTEN
+        startDiashow(data.diashow_bilder);
+
     } catch (error) {
-        // Zeigt den Fehler direkt rot auf der Website an
         console.error("Fehler:", error);
-        document.body.innerHTML = `
-            <div style="background: #f8d7da; color: #721c24; padding: 30px; margin: 50px auto; max-width: 600px; border-radius: 8px; font-family: sans-serif; border: 1px solid #f5c6cb;">
-                <h2 style="margin-top:0; color: #721c24;">⚠️ Fehler beim Laden der Inhalte</h2>
-                <p><strong>Details:</strong> ${error.message}</p>
-                <hr style="border:0; border-top:1px solid #f5c6cb; margin: 15px 0;">
-                <p style="font-size: 0.9rem; margin-bottom:0;">Mögliche Ursache: Entweder heißt die Datei auf GitHub nicht exakt <code>content.json</code> (Groß-/Kleinschreibung!) oder sie liegt nicht im Hauptverzeichnis.</p>
-            </div>
-        ` + document.body.innerHTML;
+        // (Optional: Hier den roten Kasten von vorher einblenden, wenn was schiefgeht)
     }
 });
+
+
+function startDiashow(bilderListe) {
+    const diashowWrapper = document.getElementById('diashow-wrapper');
+
+    if (!bilderListe || bilderListe.length === 0) {
+        console.warn("Keine Diashow-Bilder in content.json gefunden.");
+        return;
+    }
+
+    // A) Die Bild-Elemente im HTML erstellen
+    bilderListe.forEach((bildName, index) => {
+        const slideDiv = document.createElement('div');
+        slideDiv.classList.add('diashow-slide');
+        // WICHTIG: Pfad zum Ordner images/diashow/
+        slideDiv.style.backgroundImage = `url('images/diashow/${bildName}')`;
+        
+        // Das erste Bild sofort sichtbar machen
+        if (index === 0) {
+            slideDiv.classList.add('active');
+        }
+        
+        diashowWrapper.appendChild(slideDiv);
+    });
+
+    // B) Die Rotation starten
+    const slides = document.querySelectorAll('.diashow-slide');
+    let currentSlideIndex = 0;
+    const intervalTime = 5000; // 5 Sekunden pro Bild
+
+    if (slides.length > 1) {
+        setInterval(() => {
+            // Das aktuelle Bild ausblenden
+            slides[currentSlideIndex].classList.remove('active');
+            
+            // Index erhöhen (und zum Anfang zurückspringen, wenn am Ende)
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            
+            // Das nächste Bild einblenden
+            slides[currentSlideIndex].classList.add('active');
+            
+        }, intervalTime);
+    }
+}
