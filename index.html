@@ -5,32 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unsere Hochzeit</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Einbindung der Google Font 'Playfair Display' für edle Überschriften -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="hero">
-        <h1 id="paar_namen">Laden...</h1>
-        <p class="date" id="datum"></p>
+    <!-- Einheitliches Menüband (Header) -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#welcome" class="header-logo" data-content="paar_namen">Laden...</a>
+            <nav class="site-nav">
+                <a href="#welcome">Welcome</a>
+                <a href="#location">Location</a>
+                <a href="#fotos">Fotos</a>
+                <a href="#kulinarik">Kulinarik</a>
+                <a href="#infos">Infos</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="content">
-        <section>
-            <p id="einleitungstext" class="lead"></p>
+    <!-- Hauptinhalt -->
+    <main>
+        <!-- 1. Welcomepage / Startseite -->
+        <section id="welcome" class="hero">
+            <h1 data-content="paar_namen">Laden...</h1>
+            <p class="date" data-content="datum">Laden...</p>
+            <p class="intro-text" data-content="einleitungstext">Laden...</p>
         </section>
 
-        <section class="location">
-            <h2>Der Ort</h2>
-            <p><strong id="location_name"></strong></p>
-            <p id="location_adresse"></p>
+        <!-- 2. Location -->
+        <section id="location">
+            <h2>Die Location</h2>
+            <p><strong data-content="location_name" style="font-size: 1.2rem; color: var(--primary);"></strong></p>
+            <p data-content="location_adresse"></p>
+            <p class="section-desc" data-content="location_details"></p>
         </section>
 
-        <section class="rsvp">
-            <h2>Zusage</h2>
-            <p>Bitte gebt uns bis zum <span id="rsvp_frist"></span> Bescheid.</p>
+        <!-- 3. Fotos -->
+        <section id="fotos">
+            <h2>Eindrücke & Fotos</h2>
+            <p class="section-desc" data-content="fotos_text">Hier findet ihr nach der Hochzeit alle Erinnerungen und Schnappschüsse.</p>
+            <!-- Platzhalter für Foto-Grid oder Link -->
+            <div class="photo-placeholder" data-content="fotos_hinweis"></div>
+        </section>
+
+        <!-- 4. Kulinarik -->
+        <section id="kulinarik">
+            <h2>Kulinarik</h2>
+            <p class="section-desc" data-content="kulinarik_text">Von regionalen Köstlichkeiten bis zur Mitternachtssause – hier erfahrt ihr alles rund um das leibliche Wohl.</p>
+        </section>
+
+        <!-- 5. Infos & FAQ -->
+        <section id="infos">
+            <h2>Wichtige Infos</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Dresscode</h3>
+                    <p data-content="info_dresscode">Laden...</p>
+                </div>
+                <div class="info-item">
+                    <h3>Geschenke</h3>
+                    <p data-content="info_geschenke">Laden...</p>
+                </div>
+                <div class="info-item">
+                    <h3>Rückmeldung (RSVP)</h3>
+                    <p>Bitte gebt uns bis zum <span data-content="rsvp_frist" style="font-weight: bold; color: var(--primary);"></span> Bescheid.</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Das Skript, das die Daten einfügt -->
+    <!-- Einheitlicher Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 – <span data-content="paar_namen"></span> | Wir freuen uns auf euch!</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
