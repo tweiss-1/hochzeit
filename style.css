@@ -1,0 +1,126 @@
+:root {
+    /* --- FARBPALETTE: BORDEAUX, OLIV, TAUPE --- */
+    --primary: #4A1525;        /* Edles, tiefes Bordeaux für Überschriften, Header & Akzente */
+    --accent: #5C6B4B;         /* Gedämpftes, elegantes Olivgrün für feine Highlights */
+    --taupe: #9E9388;          /* Warmes Taupe / Graubraun für dezente Rahmen & Details */
+    --bg-main: #F7F5F2;        /* Sehr heller, warmer Creme-/Taupe-Hintergrund */
+    --bg-card: #FFFFFF;        /* Reines Weiß für Karten & Container */
+    --text-main: #2C2825;      /* Weiches Dunkelbraun/Anthrazit für den Haupttext */
+    --text-light: #736C65;     /* Gedämpfter Taupe-Ton für Datum & Nebeninfos */
+    
+    /* --- SCHRIFTEN & ABSTÄNDE --- */
+    --font-heading: 'Playfair Display', Georgia, serif; /* Edle Serifenschrift für Titel */
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Klare Schrift für Lesbarkeit */
+    --max-width: 900px;
+}
+
+/* Grundlayout */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- EINHEITLICHER HEADER & NAVIGATION --- */
+header.site-header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--taupe);
+    opacity: 0.98;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(74, 21, 37, 0.05);
+}
+
+.header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.site-nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+    color: var(--accent);
+}
+
+/* --- SEKTIONEN & DESIGN-ELEMENTE --- */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.hero p.date {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+section {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(158, 147, 136, 0.08);
+    border: 1px solid rgba(158, 147, 136, 0.15);
+}
+
+h2 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    border-bottom: 1px solid rgba(158, 147, 136, 0.3);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 1.8rem;
+}
+
+/* --- EINHEITLICHER FOOTER --- */
+footer.site-footer {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--primary);
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+    letter-spacing: 1px;
+}
