@@ -1,0 +1,49 @@
+/* Layout – nutzt nur Variablen aus design.css */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+body { font-family: var(--font-body); font-size: var(--text-body); line-height: 1.7;
+       color: var(--color-mist); background: var(--color-forest); }
+
+/* Kapitel: immer volle Bildschirmhöhe */
+.chapter { position: relative; min-height: 100vh; min-height: 100svh; scroll-snap-align: start;
+           display: flex; align-items: center; padding: var(--space); overflow: hidden; }
+.chapter__bg { position: absolute; inset: 0; z-index: -2;
+               background: linear-gradient(160deg, var(--color-forest), var(--color-sage)); } /* Platzhalter ohne Bild */
+.chapter__bg img, .chapter__bg video { width: 100%; height: 100%; object-fit: cover; }
+.chapter::after { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-overlay); }
+
+.chapter__content { max-width: var(--measure); }
+.chapter__content--wide { max-width: 60rem; }
+.letters { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--space); }
+h3 { font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 1.8rem; margin-bottom: .4rem; }
+.chapter--right .chapter__content { margin-left: auto; }
+.chapter--center { justify-content: center; text-align: center; }
+
+h1, h2 { font-family: var(--font-display); font-weight: 300; line-height: 1.05; }
+h1 { font-size: var(--text-hero); }
+h2 { font-size: var(--text-title); margin-bottom: 1.2rem; }
+h2::after { content: ""; display: block; width: 3.5rem; height: 1px; background: var(--color-brass); margin-top: 1.2rem; }
+.chapter--center h2::after { margin-inline: auto; }
+.subtitle { font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 1.6rem; margin-top: 1rem; }
+p + p { margin-top: 1em; }
+
+.button { display: inline-block; margin-top: 2rem; padding: .9rem 2rem; color: var(--color-mist);
+          border: 1px solid var(--color-brass); border-radius: var(--radius); text-decoration: none;
+          transition: background var(--transition), color var(--transition); }
+.button:hover, .button:focus-visible { background: var(--color-brass); color: var(--color-forest); }
+
+/* Navigation oben */
+.nav { position: fixed; top: 0; inset-inline: 0; z-index: 10; display: flex; justify-content: center;
+       gap: clamp(1rem, 3vw, 2.5rem); padding: 1.2rem var(--space); }
+.nav a { color: var(--color-mist); text-decoration: none; font-size: .95rem; opacity: .75;
+         padding-bottom: .2rem; border-bottom: 1px solid transparent; transition: var(--transition); }
+.nav a:hover, .nav a.is-active { opacity: 1; border-color: var(--color-brass); }
+
+/* Punkte rechts */
+.dots { position: fixed; right: 1.2rem; top: 50%; transform: translateY(-50%); z-index: 10; display: grid; gap: .9rem; }
+.dots a { width: .6rem; height: .6rem; border-radius: 50%; border: 1px solid var(--color-mist); transition: var(--transition); }
+.dots a.is-active { background: var(--color-brass); border-color: var(--color-brass); }
+
+:focus-visible { outline: 2px solid var(--color-brass); outline-offset: 4px; }
+@media (max-width: 600px) { .dots { display: none; } .nav { font-size: .85rem; gap: .9rem; flex-wrap: wrap; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
