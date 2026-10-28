@@ -11,6 +11,8 @@
   --color-mist:    #EEF1EC;  /* Kühles Weiß – Text auf Bildern */
   --color-brass:   #B8925A;  /* Messing – Linien, Buttons */
   --color-overlay: rgba(36, 49, 42, 0.45); /* Abdunklung über Bildern */
+  --color-panel: rgba(36, 49, 42, 0.55);  /* transparenter Block hinter dem Text */
+  --panel-blur: 8px;                      /* Weichzeichnung des Hintergrunds, 0 = aus */
 
   /* Schriften */
   --font-display: "Fraunces", Georgia, serif;

@@ -76,3 +76,7 @@ p + p { margin-top: 1em; }
 .legal-page h2 { font-size: 1.6rem; margin: 2rem 0 .5rem; }
 .legal-page h2::after { display: none; }
 .legal-page a { color: var(--color-brass); }
+
+/* Transparenter Textblock für bessere Lesbarkeit */
+.panel { background: var(--color-panel); padding: clamp(1.5rem, 4vw, 3rem); border-radius: var(--radius);
+         -webkit-backdrop-filter: blur(var(--panel-blur)); backdrop-filter: blur(var(--panel-blur)); }
