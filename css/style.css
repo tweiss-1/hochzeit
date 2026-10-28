@@ -64,3 +64,15 @@ p + p { margin-top: 1em; }
 .timeline h3 { font-size: 1.4rem; margin: 0; grid-column: 2; padding-left: 1rem; }
 .timeline p { grid-column: 2; padding-left: 1rem; font-size: .95em; }
 .timeline li:last-child { padding-bottom: 0; }
+
+/* Rechtliches, klein am unteren Rand */
+.legal-links { position: absolute; bottom: 1rem; inset-inline: 0; display: flex; justify-content: center; gap: 1.5rem; font-size: .8rem; }
+.legal-links a { color: var(--color-mist); opacity: .7; text-decoration: none; }
+.legal-links a:hover, .legal-links a:focus-visible { opacity: 1; text-decoration: underline; }
+
+/* Unterseiten Impressum/Datenschutz */
+.legal-page { max-width: 42rem; margin: 0 auto; padding: var(--space); }
+.legal-page h1 { font-size: var(--text-title); margin-bottom: 1.5rem; }
+.legal-page h2 { font-size: 1.6rem; margin: 2rem 0 .5rem; }
+.legal-page h2::after { display: none; }
+.legal-page a { color: var(--color-brass); }
