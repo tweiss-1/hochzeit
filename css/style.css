@@ -52,3 +52,15 @@ p + p { margin-top: 1em; }
 :focus-visible { outline: 2px solid var(--color-brass); outline-offset: 4px; }
 @media (max-width: 600px) { .dots { display: none; } .nav { font-size: .85rem; gap: .9rem; flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+/* Zeitstrahl */
+.timeline { list-style: none; padding: 0; margin-top: 2rem; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 4.6rem; top: .6rem; bottom: .6rem;
+                    width: 1px; background: var(--color-brass); }
+.timeline li { position: relative; display: grid; grid-template-columns: 4rem 1fr; column-gap: 1.6rem;
+               padding-bottom: 1.4rem; }
+.timeline li::before { content: ""; position: absolute; left: 4.6rem; top: .55rem; width: .7rem; height: .7rem;
+                       border-radius: 50%; background: var(--color-brass); transform: translateX(-50%); }
+.timeline time { grid-row: span 2; font-family: var(--font-display); font-size: 1.3rem; text-align: right; }
+.timeline h3 { font-size: 1.4rem; margin: 0; grid-column: 2; padding-left: 1rem; }
+.timeline p { grid-column: 2; padding-left: 1rem; font-size: .95em; }
+.timeline li:last-child { padding-bottom: 0; }
