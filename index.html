@@ -1,128 +1,85 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsere Hochzeit – Kathi & Thomas</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anna & Max – Wir heiraten</title>
+  <link rel="stylesheet" href="css/design.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Menüband -->
-    <header class="site-header">
-        <div class="header-container">
-            <a href="#welcome" class="header-logo" data-content="paar_namen">Laden...</a>
-            <nav class="site-nav">
-                <a href="#welcome">Welcome</a>
-                <a href="#location">Location</a>
-                <a href="#fotos">Fotos</a>
-                <a href="#kulinarik">Kulinarik</a>
-                <a href="#infos">Infos</a>
-            </nav>
-        </div>
-    </header>
+<nav class="nav" aria-label="Kapitel">
+  <a data-nav href="#start">Start</a>
+  <a data-nav href="#brautpaar">Das Brautpaar</a>
+  <a data-nav href="#location">Die Location</a>
+  <a data-nav href="#kulinarik">Die Kulinarik</a>
+  <a data-nav href="#einladung">Die Einladung</a>
+</nav>
+<div class="dots" aria-hidden="true">
+  <a data-nav href="#start"></a><a data-nav href="#brautpaar"></a><a data-nav href="#location"></a>
+  <a data-nav href="#kulinarik"></a><a data-nav href="#einladung"></a>
+</div>
 
-    <main style="max-width: none; padding: 0;">
+<main>
+  <!-- Start. Statt <img> kann auch <video autoplay muted loop playsinline src="assets/video/start.mp4"> stehen -->
+  <section class="chapter chapter--center" id="start">
+    <div class="chapter__bg"><img src="assets/images/start.jpg" alt="" onerror="this.remove()"></div>
+    <div class="chapter__content">
+      <h1>Anna &amp; Max</h1>
+      <p class="subtitle">Wir heiraten – 12. September 2027</p>
+    </div>
+  </section>
 
-        <!-- 1. Welcome / Startseite (Mit Hintergrundbild) -->
-        <section id="welcome" class="hero-section" style="background-image: url('watermarked_img_6513407295372902831.jpg');">
-            <div class="hero-content">
-                <h1 data-content="paar_namen">Laden...</h1>
-                <p class="date" data-content="datum" style="letter-spacing: 3px; text-transform: uppercase; font-size: 1rem; color: #E5DCD5;"></p>
-                <p data-content="einleitungstext" style="font-size: 1.3rem; margin-top: 1.5rem;"></p>
-            </div>
-        </section>
+  <section class="chapter" id="brautpaar">
+    <div class="chapter__bg"><img src="assets/images/brautpaar.jpg" alt="Anna und Max" onerror="this.remove()"></div>
+    <div class="chapter__content chapter__content--wide">
+      <h2>Das Brautpaar</h2>
+      <div class="letters">
+        <article>
+          <h3>Anna</h3>
+          <p>Liebe Gäste, ich freue mich unglaublich, diesen Tag mit euch zu teilen. Jede und jeder von euch hat uns ein Stück des Weges begleitet.</p>
+        </article>
+        <article>
+          <h3>Max</h3>
+          <p>Liebe Familie, liebe Freunde, danke, dass ihr dabei seid. Wir freuen uns auf einen Tag voller Musik, gutem Essen und vielen Umarmungen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <!-- 2. Location (Mit Hintergrundbild) 
-        <section id="location" class="hero-section" style="background-image: url(images/schloss-ottersbach.jpg);">
-            <div class="hero-content">
-                <h2>Die Location</h2>
-                <p style="font-size: 1.4rem; font-weight: bold;" data-content="location_name"></p>
-                <p data-content="location_adresse"></p>
-                <p data-content="location_details" style="margin-top: 1rem; font-style: italic;"></p>
-            </div>
-        </section> -->
+  <section class="chapter chapter--right" id="location">
+    <div class="chapter__bg">
+      <video autoplay muted loop playsinline poster="assets/images/location.jpg" aria-hidden="true">
+        <source src="assets/video/location.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="chapter__content">
+      <h2>Die Location</h2>
+      <p>Wir feiern auf dem Gut Beispielhof, umgeben von Wiesen und Weinbergen. Die Trauung findet im Garten statt, danach geht es in die Scheune zum Essen und Tanzen.</p>
+      <a class="button" href="https://maps.google.com/?q=Gut+Beispielhof" target="_blank" rel="noopener">Auf Google Maps öffnen</a>
+    </div>
+  </section>
 
-        <!-- 2. Location (Mit Hintergrund-Video) -->
-        <section id="location" class="hero-section video-section">
-            <!-- Das Video-Element -->
-            <video autoplay muted loop playsinline class="bg-video">
-                <source src="images/location.mp4" type="video/mp4">
-                Dein Browser unterstützt kein Video.
-            </video>
+  <section class="chapter" id="kulinarik">
+    <div class="chapter__bg"><img src="assets/images/kulinarik.jpg" alt="Das Hochzeitsmenü" onerror="this.remove()"></div>
+    <div class="chapter__content">
+      <h2>Die Kulinarik</h2>
+      <p>Regionale Zutaten, ein Menü in mehreren Gängen und ein langer Abend an der gemeinsamen Tafel. Bitte sagt uns Bescheid, wenn ihr Allergien habt oder euch vegetarisch ernährt.</p>
+      <a class="button" href="assets/pdf/menueplan.pdf" target="_blank" rel="noopener">Menüplan als PDF ansehen</a>
+    </div>
+  </section>
 
-            <!-- Der Textinhalt (wird dank z-index über das Video gelegt) -->
-            <div class="hero-content">
-                <h2>Die Location</h2>
-                <p style="font-size: 1.4rem; font-weight: bold;" data-content="location_name"></p>
-                <p data-content="location_adresse"></p>
-                <p data-content="location_details" style="margin-top: 1rem; font-style: italic;"></p>
-            </div>
-        </section>
+  <section class="chapter chapter--center" id="einladung">
+    <div class="chapter__bg"><img src="assets/images/einladung.jpg" alt="" onerror="this.remove()"></div>
+    <div class="chapter__content">
+      <h2>Die Einladung</h2>
+      <p>Wir freuen uns, wenn ihr mit uns feiert. Bitte sagt uns bis zum 1. Juni 2027 zu oder ab, damit wir alles gut planen können.</p>
+      <a class="button" href="https://forms.gle/DEIN-FORMULAR-LINK" target="_blank" rel="noopener">Zu- oder absagen</a>
+    </div>
+  </section>
+</main>
 
-        <!-- 3. Fotos 
-        <section id="fotos" class="hero-section" style="background-image: url('watermarked_img_845686807046819129.jpg');">
-            <div class="hero-content">
-                <h2>Eindrücke & Fotos</h2>
-                <p data-content="fotos_text"></p>
-                <p style="font-weight: bold; margin-top: 1rem;" data-content="fotos_hinweis"></p>
-            </div>
-        </section> -->
-
-        <!-- 3. Fotos (Mit automatischer Diashow) -->
-        <section id="fotos" class="hero-section video-section"> <!-- Behält Overlay-Stil bei -->
-            <!-- NEU: Hier baut das JS die Diashow-Bilder rein -->
-            <div class="diashow-container" id="diashow-wrapper">
-                <!-- Die Bilder werden hier vom JS eingefügt, z.B.:
-                <div class="diashow-slide active" style="background-image: url('images/diashow/bild1.jpg');"></div>
-                <div class="diashow-slide" style="background-image: url('images/diashow/bild2.jpg');"></div>
-                -->
-            </div>
-
-            <div class="hero-content">
-                <h2>Eindrücke & Fotos</h2>
-                <p data-content="fotos_text"></p>
-                <p style="font-weight: bold; margin-top: 1rem;" data-content="fotos_hinweis"></p>
-            </div>
-        </section>
-
-        <!-- 4. Kulinarik (Mit Hintergrundbild) -->
-        <section id="kulinarik" class="hero-section" style="background-image: url(images/kulinarik.jpg);">
-            <div class="hero-content">
-                <h2>Kulinarik</h2>
-                <p data-content="kulinarik_text" style="font-size: 1.2rem;"></p>
-            </div>
-        </section>
-
-        <!-- 5. Infos & FAQ (Als klassische, saubere Box auf hellem Hintergrund) -->
-        <section id="infos" class="info-section">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <h2>Wichtige Infos</h2>
-            </div>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>Dresscode</h3>
-                    <p data-content="info_dresscode"></p>
-                </div>
-                <div class="info-item">
-                    <h3>Geschenke</h3>
-                    <p data-content="info_geschenke"></p>
-                </div>
-                <div class="info-item">
-                    <h3>Rückmeldung (RSVP)</h3>
-                    <p>Bitte gebt uns bis zum <span data-content="rsvp_frist" style="font-weight: bold; color: var(--primary);"></span> Bescheid.</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <p>&copy; 2026 – <span data-content="paar_namen"></span> | Wir freuen uns auf euch!</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

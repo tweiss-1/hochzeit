@@ -1,0 +1,29 @@
+/* ==========================================================
+   DESIGNSPRACHE – hier änderst du Farben, Schriften, Abstände.
+   Alle anderen Dateien nutzen nur diese Variablen.
+   ========================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Figtree:wght@400;500&display=swap");
+
+:root {
+  /* Farben */
+  --color-forest:  #24312A;  /* Tiefes Waldgrün – Hintergrund, Overlays */
+  --color-sage:    #9DAF98;  /* Salbei – Akzentflächen */
+  --color-mist:    #EEF1EC;  /* Kühles Weiß – Text auf Bildern */
+  --color-brass:   #B8925A;  /* Messing – Linien, Buttons */
+  --color-overlay: rgba(36, 49, 42, 0.45); /* Abdunklung über Bildern */
+
+  /* Schriften */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body:    "Figtree", system-ui, sans-serif;
+
+  /* Schriftgrößen */
+  --text-hero:  clamp(3.2rem, 10vw, 8rem);
+  --text-title: clamp(2.2rem, 5vw, 4rem);
+  --text-body:  clamp(1rem, 1.3vw, 1.2rem);
+
+  /* Abstände & Form */
+  --space: clamp(1.5rem, 5vw, 4rem);
+  --measure: 34rem;      /* max. Textbreite */
+  --radius: 2px;
+  --transition: 0.4s ease;
+}
